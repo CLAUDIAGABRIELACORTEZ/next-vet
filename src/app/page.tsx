@@ -23,7 +23,7 @@ const VetClinicWelcomePage: React.FC = () => {
                         </span>
                     </h1>
                     <nav>
-                        <Button variant="outline" onClick={() => setShowLogin(true)} className="mr-2">Iniciar Sesión</Button>
+                        <Button variant="outline" onClick={() => setShowLogin(true)} className="mr-2s">Iniciar Sesión</Button>
                         <Button variant="outline" onClick={() => setShowChangePassword(true)} className="mr-2">Cambiar Contraseña</Button>
                     </nav>
                 </div>

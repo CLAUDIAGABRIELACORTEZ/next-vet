@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { logout } from '@/utils/auth';
 import { PawPrint, Calendar, ClipboardList, LogOut } from 'lucide-react';
-
+import '@/app/globals.css';
 
 
 const ClientePage: React.FC = () => {

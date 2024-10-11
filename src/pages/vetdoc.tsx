@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from '@/hooks/useAuth';
 import { logout } from '@/utils/auth';
 import { Stethoscope, Calendar, Clipboard, LogOut } from 'lucide-react';
-
+import '@/app/globals.css';
 
 
 const VetDocPage: React.FC = () => {

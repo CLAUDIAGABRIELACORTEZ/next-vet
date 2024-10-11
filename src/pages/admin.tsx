@@ -6,8 +6,7 @@ import { Input } from '@/components/ui/input';
 import { useAuth } from '@/hooks/useAuth';
 import { logout } from '@/utils/auth';
 import { UserPlus, Users, PawPrint, ClipboardList, LogOut } from 'lucide-react';
-
-
+import '@/app/globals.css';
 // Tipos para los formularios
 type PersonalForm = {
     NombreCompleto: string;
@@ -184,7 +183,6 @@ const AdminPage: React.FC = () => {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
                 },
-                body: JSON.stringify({ JWT: token })
             });
             if (response.ok) {
                 const data: T[] = await response.json();
@@ -204,11 +202,11 @@ const AdminPage: React.FC = () => {
                 setShowPersonalModal(true);
                 break;
             case 'clientes':
-                await fetchData<Cliente>('/clientes/', setClienteList);
+                await fetchData<Cliente>('/admin/clientes/', setClienteList);
                 setShowClienteModal(true);
                 break;
             case 'mascotas':
-                await fetchData<Mascota>('/mascotas', setMascotaList);
+                await fetchData<Mascota>('/admin/mascotas/', setMascotaList);
                 setShowMascotaModal(true);
                 break;
         }
@@ -239,7 +237,7 @@ const AdminPage: React.FC = () => {
         const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
         return (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div className=" fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                 <div className="bg-white p-6 rounded-lg w-3/4 max-h-[80vh] overflow-y-auto">
                     <h2 className="text-2xl font-bold mb-4">{title}</h2>
                     <table className="w-full">
